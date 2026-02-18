@@ -1,0 +1,29 @@
+[
+  {
+    "input": "outputs/approach1/level1_fullvideo_success.jsonl",
+    "output": "outputs/approach1/level2_fullvideo_success.level2.json",
+    "result": {
+      "action": "PROCEED",
+      "why": "The orange block is clearly lifted off the surface and held in the gripper/in air at any time with gripper closed.",
+      "confidence": 0.99
+    }
+  },
+  {
+    "input": "outputs/approach1/level1_fullvideo_obstruction.jsonl",
+    "output": "outputs/approach1/level2_fullvideo_obstruction.level2.json",
+    "result": {
+      "action": "ABORT",
+      "why": "the stuffed toy / plush / soft toy is visible at any time in the video",
+      "confidence": 0.99
+    }
+  },
+  {
+    "input": "outputs/approach1/level1_fullvideo_push_down.jsonl",
+    "output": "outputs/approach1/level2_fullvideo_push_down.level2.json",
+    "result": {
+      "action": "REPLAN",
+      "why": "The orange block is not visible on the table/surface, indicating it was released or fell down during the lift.",
+      "confidence": 0.99
+    }
+  }
+]

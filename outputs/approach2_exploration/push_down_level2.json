@@ -1,0 +1,4 @@
+{
+  "action": "REPLAN",
+  "why": "lift=false at t=12, drop=false at t=12"
+}

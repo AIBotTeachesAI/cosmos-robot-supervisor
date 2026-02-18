@@ -1,0 +1,5 @@
+{
+  "action": "REPLAN",
+  "why": "The orange block is not visible on the table/surface, indicating it was released or fell down during the lift.",
+  "confidence": 0.99
+}

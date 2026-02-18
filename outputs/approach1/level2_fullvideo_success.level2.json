@@ -1,0 +1,5 @@
+{
+  "action": "PROCEED",
+  "why": "The orange block is clearly lifted off the surface and held in the gripper/in air at any time with gripper closed.",
+  "confidence": 0.99
+}

@@ -1,0 +1,14 @@
+{
+  "success": {
+    "action": "PROCEED",
+    "why": "lift=true at t=0,2,4"
+  },
+  "obstruction": {
+    "action": "ABORT",
+    "why": "toy_visible=true at t=12"
+  },
+  "push_down": {
+    "action": "REPLAN",
+    "why": "lift=false at t=12, drop=false at t=12"
+  }
+}
