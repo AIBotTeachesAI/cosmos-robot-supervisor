@@ -32,7 +32,7 @@ NVIDIA GPU with CUDA 12.8 driver
 
 PyTorch with CUDA support
 
-Mac CPU-only inference is not recommended for Cosmos Reason2.
+GPU required. CPU-only inference (Mac) is too slow for practical use.
 
 ---
 
@@ -142,7 +142,7 @@ sample videos
 reproducible outputs
 
 
-## 1️⃣1️⃣ Activate Cosmos Environment (if not already done)
+## 11. Activate Cosmos Environment (if not already done)
 
 ```bash
 cd ~/cosmos-reason2
