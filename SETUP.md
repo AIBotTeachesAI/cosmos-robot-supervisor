@@ -10,7 +10,7 @@ Instead, it runs on top of the official Cosmos Reason2 environment.
 
 ## 1️⃣ System Requirements
 
-Recommended environment
+### Recommended environment
 
 Ubuntu 22.04 or similar Linux distribution
 
@@ -22,7 +22,7 @@ Python 3.10+ (tested with Python 3.12)
 
 Works on most CUDA-enabled Linux systems.
 
-Tested environments
+### Tested environments
 
 GCP Deep Learning VM
 
@@ -142,7 +142,7 @@ sample videos
 reproducible outputs
 
 
-## 11. Activate Cosmos Environment (if not already done)
+## 1️⃣1️⃣ Activate Cosmos Environment (if not already done)
 
 ```bash
 cd ~/cosmos-reason2
@@ -188,21 +188,21 @@ If installation fails, run:
 
 Note: This could take a few minutes
 
-### Generate sliding clips
+### Level‑0. Generate sliding clips
 
 ```bash
 cd ~/cosmos-robot-supervisor
 bash src/approach2_exploration/video_utils/make_slowmo_and_sliding_clips.sh
 ```
 
-### Describe clip states
+### Level‑1. Describe clip states
 
 ```bash
 cd ~/cosmos-robot-supervisor
 python src/approach2_exploration/level1_explain_batch_state_label.py --fps 8
 ```
 
-### Level‑2 reasoning
+### Level‑2. reasoning
 
 ```bash
 cd ~/cosmos-robot-supervisor
