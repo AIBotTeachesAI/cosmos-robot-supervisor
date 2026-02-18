@@ -113,6 +113,7 @@ We explored two architectural approaches:
 **Key Learning:** 
 Vision-based reasoning systems achieve highest reliability when given **complete temporal context** paired with **task-specific output schemas**. Our experiments showed that 2-second sliding windows, while providing fine-grained temporal detail, fragment the manipulation sequence and make success/failure distinctions less clear—particularly for small objects where context across the full action matters.
 
+
 This architectural insight is the project's core contribution — demonstrating how input scope and prompt structure directly impact decision reliability in physical AI systems.
 ---
 
@@ -225,6 +226,8 @@ MISS_GRASP   → REPLAN  (retry required)
 - **Temporal aggregation:** Aggregating temporal state proved effective when input representations were well-formed
 
 ### 💭 Key Takeaway
+
+
 Vision-based reasoning for physical AI benefits significantly from **thoughtful prompt engineering and input design**. Providing complete temporal context and structured output schemas—rather than fragmented clips and open-ended prompts—led to more consistent and confident supervisory decisions in our experiments.
 ---
 
