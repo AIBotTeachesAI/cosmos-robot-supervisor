@@ -115,6 +115,7 @@ Vision-based reasoning systems achieve highest reliability when given **complete
 
 
 This architectural insight is the project's core contribution — demonstrating how input scope and prompt structure directly impact decision reliability in physical AI systems.
+
 ---
 
 ## ⚙️ Hardware Setup
@@ -132,10 +133,83 @@ This architectural insight is the project's core contribution — demonstrating 
 
 ---
 
-## 🚀  Installation & Usage
+## 🚀 Installation & Usage
+
+---
+**📖 [→ Complete Setup Guide (SETUP.md)](SETUP.md)**
+---
+
+Step-by-step instructions for environment setup, dependencies, and running both approaches.
+
+---
 
 
-📖 **Full installation guide:** See [SETUP.md](SETUP.md)
+
+## 🔬 Technical Details
+
+### Level 1: Visual Classification
+
+Cosmos Reason2 analyzes the full 15-second manipulation video and outputs structured classification:
+
+**Prompt Strategy:**
+- Task-specific labels (SUCCESS_LIFT, OBSTRUCTION, MISS_GRASP)
+- Forces structured JSON output
+- Includes visual evidence bullets
+
+**Why this works:** Clear label space + full temporal context = reliable classification.
+
+### Level 2: Supervisor Decision
+
+Cosmos Reason2 maps Level 1 classification to actionable supervisor decision:
+
+```
+SUCCESS_LIFT → PROCEED (safe to continue)
+OBSTRUCTION  → ABORT   (unsafe, stop immediately)
+MISS_GRASP   → REPLAN  (retry required)
+```
+
+**Design note:** Level 2 is intentionally simple — this is a **decision mapping layer**, not complex reasoning. The heavy reasoning happens in Level 1.
+
+---
+
+## 🎓 What We Learned
+
+### ✅ What Worked
+- **Full-context reasoning:** 15s videos captured complete manipulation sequences more reliably than 2s clips
+- **Structured prompting:** Task-specific labels provided clearer output than open-ended descriptions
+- **Two-level hierarchy:** Separating classification from decision mapping improved interpretability
+
+### 🔍 What We Explored
+- **Sliding window approach:** Enabled frame-by-frame analysis but fragmented action sequences
+- **Heuristic state extraction:** Required additional processing to convert natural language observations into structured states
+- **Temporal aggregation:** Aggregating temporal state proved effective when input representations were well-formed
+
+### 💭 Key Takeaway
+
+
+Vision-based reasoning for physical AI benefits significantly from **thoughtful prompt engineering and input design**. Providing complete temporal context and structured output schemas—rather than fragmented clips and open-ended prompts—led to more consistent and confident supervisory decisions in our experiments.
+
+---
+
+## 🚧 Future Work
+
+- **Cosmos Predict integration:** Visualize predicted failure trajectories after REPLAN decision
+- **Multi-camera fusion:** Combine gripper + external camera views for spatial reasoning
+- **Multi-step tasks:** Extend to longer manipulation sequences (stack, pour, handover)
+- **Real-time deployment:** Integrate with robot control loop for live supervision
+
+---
+
+## 📊 Impact
+
+This system demonstrates a **practical safety layer** for physical AI:
+
+✅ **Safer human-robot collaboration** — detects workspace intrusions  
+✅ **Early failure detection** — catches handling errors before damage  
+✅ **Operational reliability** — reduces silent failures in deployment  
+✅ **Generalizable approach** — same architecture applies to other manipulation tasks  
+
+The hierarchical reasoning pattern shown here can be adapted to autonomous vehicles, warehouse robots, surgical systems, and any physical AI that needs vision-based safety monitoring.
 
 ---
 
@@ -183,73 +257,6 @@ cosmos-robot-supervisor/
 ├── SETUP.md                          # Detailed installation guide
 └── requirements.txt
 ```
-
----
-
-## 🔬 Technical Details
-
-### Level 1: Visual Classification
-
-Cosmos Reason2 analyzes the full 15-second manipulation video and outputs structured classification:
-
-**Prompt Strategy:**
-- Task-specific labels (SUCCESS_LIFT, OBSTRUCTION, MISS_GRASP)
-- Forces structured JSON output
-- Includes visual evidence bullets
-
-**Why this works:** Clear label space + full temporal context = reliable classification.
-
-### Level 2: Supervisor Decision
-
-Cosmos Reason2 maps Level 1 classification to actionable supervisor decision:
-
-```
-SUCCESS_LIFT → PROCEED (safe to continue)
-OBSTRUCTION  → ABORT   (unsafe, stop immediately)
-MISS_GRASP   → REPLAN  (retry required)
-```
-
-**Design note:** Level 2 is intentionally simple — this is a **decision mapping layer**, not complex reasoning. The heavy reasoning happens in Level 1.
-
----
-
-## 🎓 What We Learned
-
-### ✅ What Worked
-- **Full-context reasoning:** 15s videos captured complete manipulation sequences more reliably than 2s clips
-- **Structured prompting:** Task-specific labels provided clearer output than open-ended descriptions
-- **Two-level hierarchy:** Separating classification from decision mapping improved interpretability
-
-### 🔍 What We Explored
-- **Sliding window approach:** Enabled frame-by-frame analysis but fragmented action sequences
-- **Heuristic state extraction:** Required additional processing to convert natural language observations into structured states
-- **Temporal aggregation:** Aggregating temporal state proved effective when input representations were well-formed
-
-### 💭 Key Takeaway
-
-
-Vision-based reasoning for physical AI benefits significantly from **thoughtful prompt engineering and input design**. Providing complete temporal context and structured output schemas—rather than fragmented clips and open-ended prompts—led to more consistent and confident supervisory decisions in our experiments.
----
-
-## 🚧 Future Work
-
-- **Cosmos Predict integration:** Visualize predicted failure trajectories after REPLAN decision
-- **Multi-camera fusion:** Combine gripper + external camera views for spatial reasoning
-- **Multi-step tasks:** Extend to longer manipulation sequences (stack, pour, handover)
-- **Real-time deployment:** Integrate with robot control loop for live supervision
-
----
-
-## 📊 Impact
-
-This system demonstrates a **practical safety layer** for physical AI:
-
-✅ **Safer human-robot collaboration** — detects workspace intrusions  
-✅ **Early failure detection** — catches handling errors before damage  
-✅ **Operational reliability** — reduces silent failures in deployment  
-✅ **Generalizable approach** — same architecture applies to other manipulation tasks  
-
-The hierarchical reasoning pattern shown here can be adapted to autonomous vehicles, warehouse robots, surgical systems, and any physical AI that needs vision-based safety monitoring.
 
 ---
 
