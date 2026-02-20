@@ -13,12 +13,8 @@
   <img src="assets/architecture_diagram.png" alt="System Architecture" width="800"/>
 </p>
 
-<p align="center">
-  <img src="assets/demo_preview.gif" alt="Robot Supervisor in Action" width="700"/>
-</p>
-
-
 ---
+
 
 ## 🎬 Demo Video
 
@@ -71,6 +67,19 @@ Robot Egocentric Video (15s)
 **Key Design Principle:** Cosmos Reason2 acts as a **reasoning layer only** — it does not control the robot. It supervises and advises.
 
 ---
+
+## Sample Runs 
+<p align="center">
+  <img src="assets/demo_preview.gif" alt="Robot Supervisor in Action" width="700"/>
+</p>
+
+
+<p align="center">
+  <img src="assets/demo_preview_abort.gif" alt="Robot Supervisor in Abort Action" width="700"/>
+</p>
+
+---
+
 
 ## 🎯 Results
 
