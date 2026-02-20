@@ -22,7 +22,7 @@
 
 ## 🎬 Demo Video
 
-**👉 [Watch 3-minute demo here](assets/demo_video.mp4)**
+**👉 [Watch demo on YouTube](https://www.youtube.com/watch?v=bNjZ6jcxmTk)**
 
 See the system supervise a real SO-101 robotic arm across success, obstruction, and failure scenarios.
 
