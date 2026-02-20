@@ -136,7 +136,7 @@ This architectural insight is the project's core contribution — demonstrating 
 ## 🚀 Installation & Usage
 
 ---
-**📖 [→ Complete Setup Guide (SETUP.md)](SETUP.md)**
+**📖 [→ Complete Setup and deployment Guide (SETUP.md)](SETUP.md)**
 ---
 
 Step-by-step instructions for environment setup, dependencies, and running both approaches.
