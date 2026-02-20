@@ -7,11 +7,14 @@
 
 > 🎯 **Vision-based supervisor using NVIDIA Cosmos Reason2 to monitor real robot manipulation tasks and make safety decisions**
 
+---
+
 ## Architecture Diagram
 
 <p align="center">
   <img src="assets/architecture_diagram.png" alt="System Architecture" width="800"/>
 </p>
+
 
 ---
 
@@ -67,6 +70,7 @@ Robot Egocentric Video (15s)
 **Key Design Principle:** Cosmos Reason2 acts as a **reasoning layer only** — it does not control the robot. It supervises and advises.
 
 ---
+
 
 ## Sample Runs 
 <p align="center">
@@ -145,7 +149,7 @@ This architectural insight is the project's core contribution — demonstrating 
 ## 🚀 Installation & Usage
 
 ---
-**📖 [→ Complete Setup and deployment Guide (SETUP.md)](SETUP.md)**
+**📖 [→ Complete Setup and Deployment Guide (SETUP.md)](SETUP.md)**
 ---
 
 Step-by-step instructions for environment setup, dependencies, and running both approaches.
