@@ -18,15 +18,6 @@
 
 ---
 
-
-## 🎬 Demo Video
-
-**👉 [Watch demo on YouTube](https://www.youtube.com/watch?v=bNjZ6jcxmTk)**
-
-See the system supervise a real SO-101 robotic arm across success, obstruction, and failure scenarios.
-
----
-
 ## 🔥 The Problem
 
 Robots don't fail because motion planning breaks — they fail because **the world changes**:
@@ -40,6 +31,15 @@ Traditional robots can't recognize these situations from vision alone. They need
 **This project solves that** by adding a vision-based supervisor that watches the robot and decides: should it proceed, stop, or retry?
 
 ---
+
+## 🎬 Demo Video
+
+**👉 [Watch demo on YouTube](https://www.youtube.com/watch?v=bNjZ6jcxmTk)**
+
+See the system supervise a real SO-101 robotic arm across success, obstruction, and failure scenarios.
+
+---
+
 
 ## ✨ What We Built
 
@@ -244,7 +244,7 @@ cosmos-robot-supervisor/
 │           └── make_slowmo_and_sliding_clips.sh
 │
 ├── videos/
-│   ├── inputs/                       # Original test videos
+│   ├── inputs/                       # Original lerobot dataset videos
 │   │   ├── success/
 │   │   ├── obstruction/
 │   │   └── push_down/
