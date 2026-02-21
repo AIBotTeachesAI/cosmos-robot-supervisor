@@ -96,7 +96,15 @@ uv sync
 huggingface-cli login
 ```
 
+Enter Token when prompted
+
 You must have access to gated Cosmos Reason2 weights.
+
+Get access from huggingface website.
+   
+https://huggingface.co/nvidia/Cosmos-Reason2-2B
+   
+https://huggingface.co/nvidia/Cosmos-Reason2-8B
 
 ---
 
@@ -174,19 +182,20 @@ python src/approach1/level2_from_fullvideo_files.py
 
 ## Install ffmpeg (one time)
 
+
+ ```bash
+ sudo apt-get update
+``` 
+
+Note: This could take a few minutes
+
+
 ```bash
 sudo apt-get install -y ffmpeg
 ```
 
 Note: This could take a few minutes
 
-If installation fails, run:
- ```bash
- sudo apt-get update
-``` 
- and try to install ffmpeg again.
-
-Note: This could take a few minutes
 
 ### Level‑0. Generate sliding clips
 
