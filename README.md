@@ -34,7 +34,7 @@ Traditional robots can't recognize these situations from vision alone. They need
 
 ## 🎬 Demo Video
 
-**👉 [Watch demo on YouTube](https://www.youtube.com/watch?v=bNjZ6jcxmTk)**
+**👉 [Watch demo on YouTube](https://www.youtube.com/watch?v=kWSa3itzWZc)**
 
 See the system supervise a real SO-101 robotic arm across success, obstruction, and failure scenarios.
 
@@ -48,7 +48,7 @@ A **hierarchical reasoning system** using NVIDIA Cosmos Reason2 that monitors a 
 ### System Architecture
 
 ```
-Robot Egocentric Video (15s)
+Robot Egocentric Video 
          ↓
 ┌─────────────────────────────────┐
 │  Level 1: Visual Classification │  ← Cosmos Reason2
@@ -117,7 +117,7 @@ We explored two architectural approaches:
 
 | Aspect | **Approach 1** ✅ (Final) | Approach 2 (Explored) |
 |--------|--------------------------|----------------------|
-| **Level 1 Input** | Full 15s video | 2s sliding window clips |
+| **Level 1 Input** | Complete video clip (~8s) | 2s sliding window clips |
 | **Level 1 Prompt** | Task-specific labels | Generic "describe what you see" |
 | **Level 1 Output** | Structured JSON directly | Natural language → heuristics needed |
 | **Level 2** | Clean label→action mapping | Rule-based state extraction |
@@ -162,7 +162,7 @@ Step-by-step instructions for environment setup, dependencies, and running both 
 
 ### Level 1: Visual Classification
 
-Cosmos Reason2 analyzes the full 15-second manipulation video and outputs structured classification:
+Cosmos Reason2 analyzes the complete manipulation video clip (~8s) and outputs structured classification:
 
 **Prompt Strategy:**
 - Task-specific labels (SUCCESS_LIFT, OBSTRUCTION, MISS_GRASP)
@@ -188,7 +188,7 @@ MISS_GRASP   → REPLAN  (retry required)
 ## 🎓 What We Learned
 
 ### ✅ What Worked
-- **Full-context reasoning:** 15s videos captured complete manipulation sequences more reliably than 2s clips
+- **Full-context reasoning:** Complete video clip (~8s) captured complete manipulation sequences more reliably than 2s clips
 - **Structured prompting:** Task-specific labels provided clearer output than open-ended descriptions
 - **Two-level hierarchy:** Separating classification from decision mapping improved interpretability
 
@@ -244,7 +244,7 @@ cosmos-robot-supervisor/
 │           └── make_slowmo_and_sliding_clips.sh
 │
 ├── videos/
-│   ├── inputs/                       # Original lerobot dataset videos
+│   ├── inputs/                       # Original videos (recorded via LeRobot)
 │   │   ├── success/
 │   │   ├── obstruction/
 │   │   └── push_down/
