@@ -169,6 +169,17 @@ python src/approach1/run_level1_all.py
 
 (It will download the cosmos reason model files the first time)
 
+
+#### Deprecation warnings during Level 1 execution
+
+
+**Note:** You may see the following warnings during execution - these are harmless and can be safely ignored:
+- `torchcodec` is not installed, falling back to `torchvision`
+- `torchvision` decoding is deprecated
+- Generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']
+
+As long as you see output like `SUCCESS_LIFT (conf=0.99)`, the pipeline is working correctly.
+
 ### Run Level‑2
 
 ```bash
@@ -210,6 +221,9 @@ bash src/approach2_exploration/video_utils/make_slowmo_and_sliding_clips.sh
 cd ~/cosmos-robot-supervisor
 python src/approach2_exploration/level1_explain_batch_state_label.py --fps 8
 ```
+
+**Note:** You will see the same deprecation warnings as in Approach 1 (`torchcodec`, `torchvision`, generation flags). These are harmless and can be safely ignored. The script will process clips for each scenario and save results to `outputs/approach2_exploration/`.
+
 
 ### Level‑2. reasoning
 
